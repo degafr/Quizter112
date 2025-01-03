@@ -6,6 +6,7 @@ class DBconnect {
   final url = Uri.parse(
       'https://quizter-89c45-default-rtdb.firebaseio.com/questions.json');
 
+
   Future<List<Question>> fetchQuestions() async {
     return http.get(url).then((response) {
       var data = json.decode(response.body) as Map<String, dynamic>;
